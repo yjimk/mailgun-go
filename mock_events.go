@@ -6,7 +6,7 @@ import (
 	"time"
 
 	"github.com/go-chi/chi"
-	"github.com/mailgun/mailgun-go/v4/events"
+	"github.com/yjimk/mailgun-go/v4/events"
 )
 
 func (ms *MockServer) addEventRoutes(r chi.Router) {

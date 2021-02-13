@@ -6,6 +6,7 @@
 Go library for interacting with the [Mailgun](https://mailgun.com/) [API](https://documentation.mailgun.com/api_reference.html).
 
 ## Usage
+
 ```go
 package main
 
@@ -15,7 +16,7 @@ import (
     "log"
     "time"
 
-    "github.com/mailgun/mailgun-go/v4"
+    "github.com/yjimk/mailgun-go/v4"
 )
 
 // Your available domain names can be found here:
@@ -54,6 +55,7 @@ func main() {
 ```
 
 ## Get Events
+
 ```go
 package main
 
@@ -62,8 +64,8 @@ import (
     "fmt"
     "time"
 
-    "github.com/mailgun/mailgun-go/v4"
-    "github.com/mailgun/mailgun-go/v4/events"
+    "github.com/yjimk/mailgun-go/v4"
+    "github.com/yjimk/mailgun-go/v4/events"
 )
 
 func main() {
@@ -110,7 +112,9 @@ func main() {
 ```
 
 ## Event Polling
+
 The mailgun library has built-in support for polling the events api
+
 ```go
 package main
 
@@ -118,7 +122,7 @@ import (
     "context"
     "time"
 
-    "github.com/mailgun/mailgun-go/v4"
+    "github.com/yjimk/mailgun-go/v4"
 )
 
 func main() {
@@ -150,6 +154,7 @@ func main() {
 ```
 
 # Email Validations
+
 ```go
 package main
 
@@ -159,7 +164,7 @@ import (
     "log"
     "time"
 
-    "github.com/mailgun/mailgun-go/v4"
+    "github.com/yjimk/mailgun-go/v4"
 )
 
 // If your plan does not include email validations but you have an account,
@@ -188,6 +193,7 @@ func main() {
 ```
 
 ## Webhook Handling
+
 ```go
 package main
 
@@ -199,8 +205,8 @@ import (
     "os"
     "time"
 
-    "github.com/mailgun/mailgun-go/v4"
-    "github.com/mailgun/mailgun-go/v4/events"
+    "github.com/yjimk/mailgun-go/v4"
+    "github.com/yjimk/mailgun-go/v4/events"
 )
 
 func main() {
@@ -269,7 +275,7 @@ import (
     "log"
     "time"
 
-    "github.com/mailgun/mailgun-go/v4"
+    "github.com/yjimk/mailgun-go/v4"
 )
 
 // Your available domain names can be found here:
@@ -314,23 +320,27 @@ The official mailgun documentation includes examples using this library. Go
 and click on the "Go" button at the top of the page.
 
 ### EU Region
+
 European customers will need to change the default API Base to access your domains
 
 ```go
 mg := mailgun.NewMailgun("your-domain.com", "private-api-key")
 mg.SetAPIBase(mailgun.APIBaseEU)
 ```
+
 ## Installation
 
 If you are using [golang modules](https://github.com/golang/go/wiki/Modules) make sure you
 include the `/v4` at the end of your import paths
+
 ```bash
-$ go get github.com/mailgun/mailgun-go/v4
+$ go get github.com/yjimk/mailgun-go/v4
 ```
 
 If you are **not** using golang modules, you can drop the `/v4` at the end of the import path.
 As long as you are using the latest 1.10 or 1.11 golang release, import paths that end in `/v4`
 in your code should work fine even if you do not have golang modules enabled for your project.
+
 ```bash
 $ go get github.com/mailgun/mailgun-go
 ```
@@ -338,26 +348,28 @@ $ go get github.com/mailgun/mailgun-go
 **NOTE for go dep users**
 
 Using version 3 of the mailgun-go library with go dep currently results in the following error
+
 ```
-"github.com/mailgun/mailgun-go/v4/events", which contains malformed code: no package exists at ...
+"github.com/yjimk/mailgun-go/v4/events", which contains malformed code: no package exists at ...
 ```
+
 This is a known bug in go dep. You can follow the PR to fix this bug [here](https://github.com/golang/dep/pull/1963)
-Until this bug is fixed, the best way to use version 3 of the mailgun-go library is to use the golang community 
+Until this bug is fixed, the best way to use version 3 of the mailgun-go library is to use the golang community
 supported [golang modules](https://github.com/golang/go/wiki/Modules).
 
 ## Testing
 
-*WARNING* - running the tests will cost you money!
+_WARNING_ - running the tests will cost you money!
 
 To run the tests various environment variables must be set. These are:
 
-* `MG_DOMAIN` is the domain name - this is a value registered in the Mailgun admin interface.
-* `MG_PUBLIC_API_KEY` is the Public Validation API key - you can get this value from the Mailgun [security page](https://app.mailgun.com/app/account/security)
-* `MG_API_KEY` is the Private API key - you can get this value from the Mailgun [security page](https://app.mailgun.com/app/account/security)
-* `MG_EMAIL_TO` is the email address used in various sending tests.
+- `MG_DOMAIN` is the domain name - this is a value registered in the Mailgun admin interface.
+- `MG_PUBLIC_API_KEY` is the Public Validation API key - you can get this value from the Mailgun [security page](https://app.mailgun.com/app/account/security)
+- `MG_API_KEY` is the Private API key - you can get this value from the Mailgun [security page](https://app.mailgun.com/app/account/security)
+- `MG_EMAIL_TO` is the email address used in various sending tests.
 
 and finally
 
-* `MG_SPEND_MONEY` if this value is set the part of the test that use the API to actually send email will be run - be aware *this will count on your quota* and *this _will_ cost you money*.
+- `MG_SPEND_MONEY` if this value is set the part of the test that use the API to actually send email will be run - be aware _this will count on your quota_ and _this *will* cost you money_.
 
 The code is released under a 3-clause BSD license. See the LICENSE file for more information.

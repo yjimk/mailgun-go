@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	"github.com/facebookgo/ensure"
-	"github.com/mailgun/mailgun-go/v4"
+	"github.com/yjimk/mailgun-go/v4"
 )
 
 func TestMailingListMembers(t *testing.T) {

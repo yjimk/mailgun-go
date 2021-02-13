@@ -6,7 +6,7 @@ import (
 	"testing"
 
 	"github.com/facebookgo/ensure"
-	"github.com/mailgun/mailgun-go/v4"
+	"github.com/yjimk/mailgun-go/v4"
 )
 
 func TestEmailValidationV3(t *testing.T) {

@@ -10,7 +10,7 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/mailgun/mailgun-go/v4/events"
+	"github.com/yjimk/mailgun-go/v4/events"
 )
 
 type UrlOrUrls struct {
